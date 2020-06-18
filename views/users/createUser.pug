@@ -1,0 +1,14 @@
+extends ../layout/common
+block content
+    h1 Create User
+    if errors
+        each err in errors
+            .alert.alert-danger=err
+    form(action="/users/create", method='POST')
+        label(for="name")  Name
+        input#name(name="name",type="text", class="form-control" ,aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm", value=values?values.name:'')
+        br
+        label(for="age")   Age
+        input#age(name="age",type="text", class="form-control" ,aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm", value=values?values.age:'')
+        br
+        button(class="btn btn-success") Create

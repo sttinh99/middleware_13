@@ -1,0 +1,27 @@
+extends ../layout/common
+block content
+  h1 listBooks
+  a.btn.btn-success(href="/books/create") New
+  hr
+  style.
+    th,td{
+    border: 1px soild black;
+    text-align:center;
+    }
+    table{
+      width: 500px;
+    }
+  table.table
+        tr
+          th TITLE
+          th DESCRIPTION  
+          th UPDATE
+          th DELETE
+        each book in books   
+          tr
+            td=book.title
+            td=book.description
+            td
+              a.btn.btn-ligth(href="/books/"+book.id+"/update") Update
+            td
+              a.btn.btn-ligth(href="/books/"+book.id+"/delete") Remove

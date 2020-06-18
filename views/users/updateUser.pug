@@ -1,0 +1,8 @@
+extends ../layout/common
+block content      
+      form(action='/users/update', method="post")
+            label Update User
+            input.form-control(name="name",type="text", value=user.name)
+            input(name="id",type="text",value=user.id, style="display:none")
+            br
+            button(class="btn btn-info") Update
