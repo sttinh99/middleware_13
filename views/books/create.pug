@@ -1,0 +1,14 @@
+extends ../layout/common
+block content
+    h1 Create Book
+    if errors
+        each err in errors
+            .alert.alert-danger=err
+    form(action="/books/create", method='POST')
+        label(for="title") Title
+        input#title.form-control(name="title",type="text", value=values ? values.title: '')
+        br
+        label(for="des") Description
+        input#des.form-control(name="description",type="text", value=values?values.description: '')
+        br
+        button(class="btn btn-success") Create

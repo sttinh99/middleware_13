@@ -1,0 +1,27 @@
+extends ../layout/common
+block content
+  h1 listUsers
+  a.btn.btn-success(href="/users/create") New
+  hr
+  style.
+    th,td{
+    border: 1px soild black;
+    text-align:center;
+    }
+    table{
+      width: 500px;
+    }
+  table.table
+        tr
+          th Name
+          th Age  
+          th UPDATE
+          th DELETE
+        each user in users   
+          tr
+            td=user.name
+            td=user.age
+            td
+              a.btn.btn-ligth(href="/users/"+user.id+"/update") Update
+            td
+              a.btn.btn-ligth(href="/users/"+user.id+"/delete") Remove

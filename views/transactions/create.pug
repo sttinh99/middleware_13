@@ -1,0 +1,13 @@
+extends ../layout/common
+block content
+    h1 Create Trans
+    form(action="/transactions/create", method = "POST")
+        select#book.id(name="idBook") Book
+            each book in books
+                option(value=book.id)=book.title
+        span &nbsp
+        select#user.name(name="idUser")
+            each user in users
+                option(value=user.id)=user.name
+        span &nbsp
+        button(class="btn btn-success") Create
